@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>炸金花 · 简明指南与访问提醒</title>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #faf6f0;
+      color: #2e2b28;
+      font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .page {
+      max-width: 820px;
+      width: 100%;
+      background: #fffcf8;
+      padding: 2.8rem 2.2rem;
+      border-radius: 28px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(60, 40, 20, 0.06);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      margin-bottom: 0.3rem;
+      color: #3d322c;
+      border-left: 6px solid #b7a084;
+      padding-left: 1.2rem;
+    }
+    .subhead {
+      font-size: 1rem;
+      color: #7d6e5f;
+      margin-bottom: 2.4rem;
+      padding-left: 1.8rem;
+      font-style: italic;
+      border-bottom: 1px solid #e6ddd2;
+      padding-bottom: 0.8rem;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 500;
+      margin-top: 2.6rem;
+      margin-bottom: 1rem;
+      color: #4a3e36;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px dashed #d9cdbe;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+
+    .inset-box {
+      background: #f3ede7;
+      padding: 1.6rem 2rem;
+      border-radius: 20px;
+      margin: 1.8rem 0;
+      border-left: 4px solid #c7b5a2;
+      font-size: 0.98rem;
+      color: #3f352f;
+    }
+    .inset-box strong {
+      color: #4d3f36;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 1.8rem 0;
+    }
+    .card-item {
+      flex: 1 1 200px;
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.3rem 1.1rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+      border: 1px solid #ebe1d6;
+      transition: box-shadow 0.2s;
+    }
+    .card-item:hover {
+      box-shadow: 0 6px 18px rgba(90, 70, 50, 0.06);
+    }
+    .card-item h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #59493e;
+      margin-bottom: 0.4rem;
+      border: none;
+      padding: 0;
+    }
+    .card-item p {
+      font-size: 0.92rem;
+      margin-bottom: 0;
+      color: #5b4e43;
+    }
+
+    .faq-block {
+      margin: 2rem 0 1rem;
+    }
+    .faq-item {
+      padding: 0.9rem 0;
+      border-bottom: 1px dotted #ddd3c7;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-q {
+      font-weight: 500;
+      color: #4d3f36;
+      margin-bottom: 0.2rem;
+    }
+    .faq-a {
+      font-size: 0.95rem;
+      color: #5a4e44;
+      padding-left: 0.6rem;
+    }
+
+    .tag-note {
+      background: #f1eae2;
+      padding: 1.2rem 1.8rem;
+      border-radius: 40px 12px 40px 12px;
+      margin: 2rem 0 1.2rem;
+      font-size: 0.95rem;
+      display: inline-block;
+    }
+
+    a {
+      color: #8a6f54;
+      text-decoration: none;
+      border-bottom: 1px solid #d9cabc;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    a:hover {
+      color: #5a4232;
+      border-bottom-color: #8a6f54;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e3d8cc;
+      margin: 2.2rem 0 1rem;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #948777;
+      margin-top: 2.8rem;
+      letter-spacing: 0.3px;
+    }
+
+    @media (max-width: 540px) {
+      .page {
+        padding: 1.6rem 1rem;
+      }
+      h1 {
+        font-size: 1.7rem;
+        padding-left: 0.8rem;
+      }
+      .card-grid {
+        flex-direction: column;
+      }
+      .inset-box {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>炸金花 · 简明指南</h1>
+    <div class="subhead">从玩法到节奏：一份务实的桌游参考</div>
+
+    <p>
+      纸牌游戏「<a href="https://cn-zjhgames.com">炸金花</a>」在民间牌桌上流传已久，各地规则虽有细微差别，但核心逻辑始终围绕牌型比较与心理博弈。本文从产品说明的视角出发，梳理其基本结构、策略要点与访问提示，帮助新接触者快速建立认知框架，也供老玩家对照参考。
+    </p>
+
+    <div class="inset-box">
+      <strong>💡 一句话摘要</strong><br>
+      炸金花是一款三张手牌比大小的竞技游戏，牌型优先级从豹子、同花顺、金花、顺子、对子到散牌，同牌型则按点数高低决定胜负。玩法包含明牌、暗牌、加注、比牌等环节，节奏紧凑，通常在 2–6 人间进行。
+    </div>
+
+    <h2>亮点：为什么值得了解</h2>
+    <div class="card-grid">
+      <div class="card-item">
+        <h3>⚖️ 均衡博弈</h3>
+        <p>运气与判断并重，牌型分布合理，既不过度依赖手气，也保留不确定性带来的紧张感。</p>
+      </div>
+      <div class="card-item">
+        <h3>🧠 读人读势</h3>
+        <p>通过下注节奏、加注时机、比牌选择，可以在不增加规则复杂度的情况下延伸策略深度。</p>
+      </div>
+      <div class="card-item">
+        <h3>🧩 低门槛高上限</h3>
+        <p>三张牌的规则一分钟可以讲清，但实战中的弃牌时机、诈唬频率、位置意识需要大量对局才能精进。</p>
+      </div>
+    </div>
+
+    <h2>使用建议：从入门到顺畅</h2>
+    <p>
+      如果你是初次接触，建议先和朋友以“自由场”模式试玩几轮，熟悉牌型表与比牌顺序。重点关注两点：一是记住豹子 &gt; 同花顺 &gt; 金花 &gt; 顺子 &gt; 对子 &gt; 散牌的基本链条；二是观察当“闷牌”（不看牌直接下注）时整体节奏的变化。在熟悉基础后，可以尝试引入“喜钱”“蒙牌加倍”等地方性变体，但每次只增加一条规则，避免混乱。
+    </p>
+
+    <div class="inset-box">
+      <strong>📌 场景参考</strong><br>
+      炸金花适合 3–5 人小聚、时长 30–60 分钟的休闲场合。相比德州扑克，它不需要大量筹码管理，更依赖瞬间判断和短期运气。对于线上版本，建议优先选择界面简洁、出牌反馈清晰、支持自定义局数设置的产品。
+    </div>
+
+    <h2>访问提醒：可信但克制的提示</h2>
+    <p>
+      在搜索或使用相关线上服务时，请注意甄别来源。关于游戏规则与变体，优先参考有明确版本说明的网站或文档。如果你希望了解更完整的规则体系或寻找稳定的线上对局环境，建议直接访问<a href="https://cn-zjhgames.com">炸金花</a>页面，那里提供了基本的游戏介绍与规则整理，内容相对客观，没有诱导性表述，适合作为初始参考点。
+    </p>
+    <p>
+      需要留意的是，任何形式的纸牌游戏都涉及概率与风险，请根据自身情况合理安排时间与投入。本页面不推荐任何具体平台或应用，仅从知识角度梳理玩法结构。
+    </p>
+
+    <div class="faq-block">
+      <h2>常见疑问摘要</h2>
+      <div class="faq-item">
+        <div class="faq-q">❓ 豹子和同花顺哪个更大？</div>
+        <div class="faq-a">豹子（三张相同点数）大于同花顺。在常规规则中，AAA 是最大牌型，其次是同花顺中的 A-K-Q（花色通常不区分大小）。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">❓ 散牌如何比大小？</div>
+        <div class="faq-a">先比最大单张，若相同则比第二张，再相同比第三张。A 最大，2 最小。例：A-K-9 大于 A-Q-10。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">❓ 线上玩需要下载吗？</div>
+        <div class="faq-a">部分网页端可直接运行，无需安装。若涉及 APP 下载，请确认来源商店与权限申请是否合理，避免隐私风险。</div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="footer-note">
+      本文基于通用游戏规则整理 · 不构成任何投资或参与建议<br>
+      内容仅供参考，具体玩法以实际对局或平台说明为准。
+    </div>
+  </div>
+</body>
+</html>
