@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于 MK体育 · 资料查阅与延伸阅读</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #f6f3ef; /* 米白基底 */
+            font-family: 'Georgia', 'Times New Roman', '宋体', 'Songti SC', serif;
+            color: #2e2a27;
+            line-height: 1.75;
+            padding: 2rem 1.5rem 3rem;
+        }
+
+        .page-wrap {
+            max-width: 780px;
+            margin: 0 auto;
+            background-color: #fbf9f7;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        /* 开场短句 —— 留白呼吸感 */
+        .opening {
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: #4d4439;
+            border-left: 4px solid #b7a489;
+            padding-left: 1.2rem;
+            margin-bottom: 2.2rem;
+            font-style: italic;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #2f2822;
+            margin: 0.5rem 0 1rem;
+            letter-spacing: 0.02em;
+        }
+
+        .lead {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: #3b3530;
+        }
+
+        /* 承接段落：日常查询的对照感 */
+        .context-block {
+            background: #f4efe9;
+            padding: 1.8rem 1.6rem;
+            border-radius: 16px;
+            margin: 1.8rem 0 2.2rem;
+            border: 1px solid #e4dbd0;
+        }
+
+        .context-block p {
+            margin-bottom: 1rem;
+        }
+
+        .context-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 特点列表 —— 卡牌式，温和区分 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 2.5rem 0;
+        }
+
+        .feature-item {
+            background: #ffffff;
+            padding: 1.4rem 1.2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e8e2d9;
+            transition: box-shadow 0.2s;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 6px 14px rgba(90, 70, 50, 0.06);
+        }
+
+        .feature-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #3f362f;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.01em;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: #544b43;
+        }
+
+        /* 引用块 / 提示框 */
+        .quote-note {
+            background: #f2ece3;
+            border-left: 6px solid #b4a086;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+            font-size: 0.95rem;
+            color: #3d352d;
+        }
+
+        .quote-note strong {
+            font-weight: 600;
+            color: #2a231e;
+        }
+
+        /* FAQ 摘要（极简，不喧宾夺主） */
+        .faq-mini {
+            margin: 2rem 0 1.5rem;
+            border-top: 1px solid #e0d7cc;
+            padding-top: 1.8rem;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px dashed #ddd5c9;
+            padding-bottom: 0.6rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            color: #3f362f;
+            cursor: pointer;
+            padding: 0.2rem 0;
+            font-size: 0.95rem;
+        }
+
+        .faq-mini details p {
+            margin: 0.6rem 0 0.3rem 0.8rem;
+            font-size: 0.9rem;
+            color: #564c42;
+        }
+
+        .gentle-footer {
+            margin-top: 2.8rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5dbd0;
+            font-size: 0.9rem;
+            color: #5f5549;
+            text-align: left;
+        }
+
+        .gentle-footer a {
+            color: #735f4a;
+            text-decoration: none;
+            border-bottom: 1px dotted #b7a287;
+            font-weight: 400;
+        }
+
+        .gentle-footer a:hover {
+            border-bottom: 1px solid #735f4a;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e5dbd0;
+            margin: 1.8rem 0;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .page-wrap {
+                padding: 1.8rem 1rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+            .opening {
+                font-size: 1rem;
+                padding-left: 0.9rem;
+            }
+            .context-block {
+                padding: 1.2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <!-- 开场短句：平实引入 -->
+    <div class="opening">
+        “信息不在多，在于可以反复对照。”
+    </div>
+
+    <h1>从一次查询开始</h1>
+    <p class="lead">
+        日常浏览体育资讯时，常常需要在不同平台之间来回切换——比分、赛程、统计、球队近况。而真正有效的查阅习惯，往往不是一次搜索，而是反复回来对照、延伸。这也是为什么许多朋友会把<a href="https://webapp-mksports.com" style="color:#735f4a; text-decoration:none; border-bottom:1px dotted #b7a287; font-weight:500;">MK体育</a>加入书签栏：它提供的不是单一维度的快讯，而是一整片可供检索、比对的信息基底。
+    </p>
+
+    <!-- 承接段落：日常场景 -->
+    <div class="context-block">
+        <p><strong>一个常见的场景：</strong>周末晚上，你想回顾某支球队过去五场的射门转化率，同时对比一下主力球员的出场时间。打开常规体育网站，可能需要翻三个栏目。而在<a href="https://webapp-mksports.com" style="color:#735f4a; text-decoration:underline dotted;">MK体育</a>的页面结构中，数据、分析与新闻被组织成彼此呼应的模块，你可以在同一视窗内完成横向查阅，不必反复返回首页。</p>
+        <p>这种“对照友好”的设计，让日常查询变得像翻阅一本分类清晰的手册——随手翻到某一页，就能找到上下文。</p>
+    </div>
+
+    <!-- 特点列表：四个维度 -->
+    <div class="feature-grid">
+        <div class="feature-item">
+            <h3>赛程与结果并列</h3>
+            <p>每轮赛事列表紧邻实时比分，过去与未来之间的切换只需一眼，无需跳转页面。</p>
+        </div>
+        <div class="feature-item">
+            <h3>球队资料可延伸</h3>
+            <p>从一场比赛出发，能顺着链接阅读该队历史交锋、近期状态，形成自己的笔记链。</p>
+        </div>
+        <div class="feature-item">
+            <h3>专栏与数据互补</h3>
+            <p>深度分析文章旁附有统计图表，方便你在阅读观点时自行核查数据来源。</p>
+        </div>
+        <div class="feature-item">
+            <h3>简洁的导航层级</h3>
+            <p>没有层层嵌套的菜单，所有主要板块均可在两到三次点击之内到达。</p>
+        </div>
+    </div>
+
+    <!-- 提示框/引用块 -->
+    <div class="quote-note">
+        <strong>一点延伸阅读的习惯：</strong> 看到一组数据时，顺手打开另一个联赛的同一指标做对比，往往能注意到那些被单篇报道忽略的规律。MK体育的跨联赛页面结构让这种对照变得很自然。
+    </div>
+
+    <!-- FAQ 摘要（非常克制，仅做收束） -->
+    <div class="faq-mini">
+        <details>
+            <summary>这个站点适合哪些查阅需求？</summary>
+            <p>适合日常快速查询赛果、对比球队数据、阅读赛事前瞻与复盘，以及整理自己的观赛笔记。</p>
+        </details>
+        <details>
+            <summary>信息更新节奏如何？</summary>
+            <p>赛事数据通常与官方同步，赛后统计会在比赛结束后数小时内完成整合。</p>
+        </details>
+        <details>
+            <summary>是否提供移动端适配？</summary>
+            <p>页面采用响应式设计，在手机与平板上均可正常浏览与点击查阅。</p>
+        </details>
+    </div>
+
+    <!-- 温和结尾：不催促，不煽动 -->
+    <div class="gentle-footer">
+        <p>把网址保留在书签里，只是多一个参照的起点。下次需要查阅或延伸时，不妨回到<a href="https://webapp-mksports.com">MK体育</a>，从那里继续你的阅读路径。</p>
+        <p style="margin-top:0.8rem; font-size:0.8rem; color:#8a7e72;">—— 由日常查询习惯整理而成 · 2025</p>
+    </div>
+
+    <!-- 非常小的分隔（不破坏节奏） -->
+    <hr>
+    <p style="font-size:0.7rem; color:#a39789; text-align:right; letter-spacing:0.03em;">对照 &nbsp;·&nbsp; 延伸 &nbsp;·&nbsp; 笔记</p>
+</div>
+</body>
+</html>
