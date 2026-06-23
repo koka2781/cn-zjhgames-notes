@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>始终在场 · 读一个关于专注的故事 | MK体育</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', 'Noto Serif SC', 'Source Han Serif SC', Georgia, serif;
+            background-color: #faf5ef;
+            color: #3e3a35;
+            line-height: 1.8;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 760px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* 博客文章头 */
+        .hero {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #e4dbd1;
+            padding-bottom: 2.5rem;
+        }
+
+        .hero .kicker {
+            display: inline-block;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #9b8b7b;
+            margin-bottom: 0.8rem;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+            color: #2b2722;
+            margin-bottom: 1rem;
+        }
+
+        .hero .subhead {
+            font-size: 1rem;
+            color: #7a6e62;
+            font-style: italic;
+            margin-top: 0.2rem;
+        }
+
+        .meta-line {
+            font-size: 0.85rem;
+            color: #ab9f93;
+            margin-top: 1.4rem;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* 正文 */
+        .article-body p {
+            margin-bottom: 1.6rem;
+            text-align: justify;
+            word-break: break-word;
+        }
+
+        .article-body p:first-of-type::first-letter {
+            font-size: 3.2rem;
+            float: left;
+            line-height: 1;
+            margin-right: 0.6rem;
+            margin-top: 0.1rem;
+            color: #7f6b58;
+            font-weight: 400;
+        }
+
+        /* 引用块 */
+        .pullquote {
+            background: #f2ebe3;
+            border-left: 4px solid #c8b7a6;
+            padding: 1.5rem 2rem;
+            margin: 2.2rem 0;
+            font-style: italic;
+            color: #514941;
+            font-size: 1.05rem;
+            letter-spacing: 0.01em;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .pullquote cite {
+            display: block;
+            margin-top: 0.6rem;
+            font-size: 0.85rem;
+            color: #8f8275;
+            font-style: normal;
+            letter-spacing: 0.05em;
+        }
+
+        /* 提示框 */
+        .note-block {
+            background: #ede7e0;
+            padding: 1.8rem 2rem;
+            margin: 2.2rem auto;
+            border-radius: 20px 8px 20px 8px;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        .note-block .label {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            background: #d6c9bc;
+            color: #3f3830;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            text-transform: uppercase;
+        }
+
+        .note-block p {
+            margin-bottom: 0.8rem;
+        }
+
+        .note-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 内联链接 */
+        a {
+            color: #846e59;
+            text-decoration: none;
+            padding-bottom: 1px;
+            border-bottom: 1px solid #d4c6ba;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #3f3025;
+            border-bottom-color: #3f3025;
+        }
+
+        /* 底部区域 */
+        .footer-note {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e1d7cd;
+            font-size: 0.9rem;
+            color: #968a7d;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+        }
+
+        .faq-summary {
+            margin: 2.5rem 0 0 0;
+            background: transparent;
+            border-top: 1px dashed #ddd2c5;
+            padding-top: 2rem;
+        }
+
+        .faq-summary details {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #ece3da;
+            padding-bottom: 1rem;
+        }
+
+        .faq-summary summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #4e443b;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .faq-summary summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-summary summary::before {
+            content: "▸";
+            color: #b7a595;
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+
+        .faq-summary details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .faq-summary .answer {
+            margin-top: 0.8rem;
+            padding-left: 1.8rem;
+            color: #5f554a;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 550px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .pullquote {
+                padding: 1.2rem 1.2rem;
+                margin: 1.8rem 0;
+            }
+
+            .note-block {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 文章头部 -->
+    <header class="hero">
+        <span class="kicker">叙事 · 在场感</span>
+        <h1>在场的人，比结果更长久</h1>
+        <p class="subhead">——关于专注这件事，<a href="https://webcn-mksports.com">MK体育</a> 其实什么也没说，只是每天都站在那里</p>
+        <div class="meta-line">
+            <span>阅读约 5 分钟</span>
+            <span>·</span>
+            <span>基于真实观察</span>
+        </div>
+    </header>
+
+    <!-- 正文 -->
+    <div class="article-body">
+        <p>
+            有些东西不需要反复解释，它的存在本身就是一种表达。比如一个一直亮着灯的窗口，比如每天准时翻开的笔记本，比如一个很少更换首页的体育平台。你知道它在那里，就已经足够。
+        </p>
+        <p>
+            我并不想给 <a href="https://webcn-mksports.com">MK体育</a> 下什么定义——定义常常是一种简化。我更愿意把它看作一个持续运转的现场：没有刻意的喧嚣，没有浮夸的包装，只是把当日值得关注的内容摆在台面上，然后退后一步，让阅读的人自己决定什么时候走进去。
+        </p>
+        <p>
+            这种风格在当下反而显得有些特别。如今打开任何一个页面，似乎都在被要求迅速做出反应：立刻点击、马上分享、留下评价。仿佛不参与互动，就浪费了这次访问。可是如果你只是想安安静静地看一会儿比分、读一段赛后分析，或者仅仅在午休时扫一眼联赛走势呢？
+        </p>
+
+        <!-- 引用 -->
+        <div class="pullquote">
+            “专注不一定意味着嘶吼，更多时候，它表现为一种安静的在场。”
+            <cite>—— 摘自 2025 年 3 月 随笔</cite>
+        </div>
+
+        <p>
+            我逐渐发现，很多持续关注体育的人，并不是为了追逐什么惊天动地的大新闻。他们只是需要一个稳定、可信、不添乱的窗口。这种窗口不需要每秒钟闪烁新信息，不需要弹窗提醒你“多少人在看”，更不需要强推某个观点。它只需要保持开放，保持真实，保持一种不被打扰的连贯性。
+        </p>
+        <p>
+            这一点上，<a href="https://webcn-mksports.com">MK体育</a> 做得相当克制。它没有把所有内容塞进同一个页面，也没有用浮夸的标题来拉高点击。它的首页更像一份编排工整的简报——你可以从头读下去，也可以直接跳到最感兴趣的那一栏。没有人催促你，没有人分析你的阅读习惯，也没有人试图改变你打开它的初衷。
+        </p>
+
+        <!-- 提示框 -->
+        <div class="note-block">
+            <span class="label">一种观察</span>
+            <p>有一次我注意到，某个二级联赛的升降级关键战，在主流平台几乎找不到完整的实时数据，但在 <a href="https://webcn-mksports.com">MK体育</a> 上，那个页面从赛前一直挂到赛后，没有广告遮挡，没有频繁刷新带来的闪动。就只是一张干净的表格，几行关键事件，以及一个安静的更新时间戳。</p>
+            <p>这件事很小，但让我记住了它的风格。</p>
+        </div>
+
+        <p>
+            当然，这并不是说只有安静才值得被记住。而是说，在所有人都争着发出最大声音的时候，能够不跟风，保持自己的节奏，本身就是一种难得的能力。尤其是当这种能力服务于一个具体而实在的目的：让你更清楚地看到比赛本身，而不是看到平台如何包装比赛。
+        </p>
+        <p>
+            所以当有人问我“那个网站到底怎么样”的时候，我通常不会给出太长的答案。我只会说：你可以在下午三点打开它，然后到晚上九点再打开它，它还是那个样子——该更新的都更新了，不该变的都没变。这种确定性，在如今这个信息流里，比很多花哨的功能都要珍贵。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要部分（非模板化） -->
+    <section class="faq-summary">
+        <details>
+            <summary>一个普通读者会在这里找到什么？</summary>
+            <div class="answer">
+                各类联赛的即时赛果、简明赛程、积分走势，以及偶尔出现的短篇专栏。没有会员专属区，没有积分商城，没有互动的压力。
+            </div>
+        </details>
+        <details>
+            <summary>它适合什么样的人？</summary>
+            <div class="answer">
+                如果你习惯自己判断比赛的重要性，不喜欢被算法推荐牵着走，那么这种以信息陈列为主的界面可能正好符合你的预期。
+            </div>
+        </details>
+        <details>
+            <summary>移动端体验如何？</summary>
+            <div class="answer">
+                页面做了基础的响应式适配，文字清晰，表格可横向滑动，没有隐藏的悬浮按钮，阅读时几乎感觉不到界面的存在。
+            </div>
+        </details>
+    </section>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+        <span>写于一个寻常的周二</span>
+        <span>⏺ 内容保持独立 · 无推广意图</span>
+    </div>
+
+</div>
+</body>
+</html>
